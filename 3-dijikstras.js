@@ -27,7 +27,7 @@ function dijikstras(graph, source) {
       for(let [neighbour, neighbourWeight] of graph[node]) {
         let currentWeight = neighbourWeight + weight
 
-        //change minimum distance
+        //relax neighbour current weight of neighbour is less than recorded minimum weight of neighbour
         if(currentWeight < dist[neighbour]) {
           dist[neighbour] = currentWeight
           pq.push([currentWeight, neighbour])
