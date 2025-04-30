@@ -1,4 +1,4 @@
-function dijikstras(graph, source) {
+function dijkstras(graph, source) {
     /* 
       1. initialise dist
       2. extract the node with least weight
@@ -30,21 +30,9 @@ function dijikstras(graph, source) {
         //relax neighbour current weight of neighbour is less than recorded minimum weight of neighbour
         if(currentWeight < dist[neighbour]) {
           dist[neighbour] = currentWeight
-          pq.push([currentWeight, neighbour])
         }
+        pq.push([currentWeight, neighbour])
       }
     }
     return dist
 }
-
-// Driver Code ------------
-
-// the input graph is an adjacency list 
-let inputGraph = {
-  'A': [['B', 2], ['C', 3], ['D', 6]],
-  'B': [['A', 2], ['D', 1], ['C', 1]],
-  'C': [['A', 3], ['D', 4], ['B', 1]],
-  'D': [['A', 6], ['B', 1], ['C', 4]],
-};
-
-console.log(dijikstras(inputGraph, "A"))
